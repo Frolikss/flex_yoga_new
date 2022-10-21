@@ -133,7 +133,7 @@ ul {
     color: #fff;
     margin: 0 200px 280px 0;
 }
-
+/* TODO: Add bg image on hover */
 .level-tab {
     display: flex;
     position: relative;
@@ -309,7 +309,7 @@ ul {
     max-width: 1260px;
     margin: 390px auto 330px;
 }
-
+/* TODO: hover */
 .yoga-types {
     display: flex;
     justify-content: space-between;
