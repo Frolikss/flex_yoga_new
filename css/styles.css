@@ -98,14 +98,15 @@ ul {
 }
 
 .levels {
-    margin: 350px 200px 0 0px;
+    margin-top: 350px;
 }
 
 .levels .level-title {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0 320px 0 350px;
+    margin: 0 auto;
+    max-width: 1250px;
 }
 
 .title {
@@ -130,46 +131,68 @@ ul {
 .level-info {
     display: flex;
     color: #fff;
-    margin: 0 0 280px 0;
+    margin: 0 200px 280px 0;
 }
 
-.newbie {
+.level-tab {
     display: flex;
+    position: relative;
     justify-content: space-between;
+    background: #E6BE80;
+    font-family: 'Gilroy Bold', serif;
+    font-size: 22px;
+    padding: 70px;
+}
+
+.level-tab:first-child {
     background: #5FA494;
 }
 
-.newbie-block {
+.level-tab:last-child {
+    background: #F08365;
+}
+
+.level-tab:hover .tab-info {
+    display: block;
     flex: 0 1 50%;
     align-self: flex-end;
-    padding-left: 300px;
     padding-bottom: 70px;
-    background: url(/img/bg_chains.svg) no-repeat 0 0;
 }
 
-.newbie-title {
-    font-family: 'Gilroy Regular', serif;
-    font-size: 35px;
+.level-tab:hover .tab-head-block {
+    justify-content: flex-end;
+    flex: 0 1 50%;
+}
+
+.level-tab:hover .arrow {
+    display: none;
+}
+
+.tab-head-block {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tab-head {
     writing-mode: vertical-rl;
-    transform: scale(-1, -1);
-    flex: 0 1 50%;
 }
 
-.newbie-info {
-    margin: 132px 167px 144px 0;
-    flex: 0 1 50%;
-    box-shadow: 0 0 5px -2px #5FA494,
-                0 50px 0px 0px rgba(95, 164, 148, 0);
+.tab-info {
+    display: none;
+    /* box-shadow: inset 0 0 5px -2px #5FA494,
+                inset 0 50px 0px 0px rgba(95, 164, 148, 0); */
 }
 
-.newbie-text {
+.tab-text {
     font-family: 'Gilroy Medium', serif;
     font-size: 40px;
     line-height: 47px;
     margin-bottom: 87px;
 }
 
-.newbie-join {
+.tab-join {
     border: 2px solid #fff;
     border-radius: 100px;
     font-family: 'Gilroy Medium', serif;
@@ -177,28 +200,15 @@ ul {
     padding: 13px 48px 16px;
 }
 
-.level-tab {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #E6BE80;
-    font-family: 'Gilroy Bold', serif;
-    font-size: 22px;
-    writing-mode: vertical-rl;
-    padding: 70px;
-}
-
 .arrow {
+    display: block;
     width: 57px; 
     height: 57px;
+    margin-bottom: 60px;
 }
 
-.tab-text {
+.tab-head {
     transform: scale(-1, -1);
-}
-
-.level-tab:last-child {
-    background: #F08365;
 }
 
 .coach {
@@ -287,23 +297,29 @@ ul {
     border-radius: 13px 20px 20px 13px;
     border-style: solid;
     border-width: 0 0 0 21px;
-    border-image: url('/img/pill_orange.png') 0 0 0 21;
+    border-image: url('/assets/png/pill_orange.png') 0 0 0 21;
 }
 
 .yoga-link:last-child {
-    border-image: url('/img/pill_green.png') 0 0 0 21;
+    border-image: url('/assets/png/pill_green.png') 0 0 0 21;
     margin-left: 42px;
 }
 
 .types {
     max-width: 1260px;
-    margin: 390px auto;
+    margin: 390px auto 330px;
 }
 
 .yoga-types {
     display: flex;
-    /* justify-content: space-around; */
+    justify-content: space-between;
     flex-wrap: wrap;
+    margin-top: 75px;
+}
+
+.yoga-types::after {
+    content: "";
+    flex: auto;
 }
 
 .yoga-items {
@@ -312,44 +328,124 @@ ul {
     line-height: 30px;
     color: #FFF;
     border-radius: 19px;
-    padding: 35px;
+    height: 0;
+    padding-top: 29.91%;
+    margin-right: 30px;
     margin-bottom: 40px;
-    flex: 1;
+    flex: 1 1 20%;
 }
 
-.type-first {
-    background: url('/img/type-first.png') no-repeat bottom right,
-                 #E6BE80;
-    flex: 0 1 70%; 
-    padding: 56px 0 140px 60px;
- }
-
- .type-first h2 {
-    margin: 0;
- }
-
- .type-first p {
+.yoga-items p {
+    display: none;
     font-family: 'Gilroy Medium', serif;
     font-size: 20px;
     max-width: 430px;
  }
 
+
+.yoga-items:hover {
+    flex: 1 1 70%; 
+    /* padding: 56px 0 140px 60px; */
+    background-color: #E6BE80;
+}
+
+.yoga-items:hover > p {
+    display: block;
+}
+
+
+.type-first {
+    background: url('/assets/png/yoga-first.png') no-repeat;
+ }
+
+
 .type-second {
-    background: url('/img/type-second.png') no-repeat;
+    background: url('/assets/png/type-second.png') no-repeat;
 }
 
 .type-third {
-    background: url('/img/type-third.png') no-repeat;
+    background: url('/assets/png/type-third.png') no-repeat;
 }
 
 .type-fourth {
-    background: url('/img/type-fourth.png') no-repeat;
+    background: url('/assets/png/type-fourth.png') no-repeat;
 }
 
 .type-fifth {
-    background: url('/img/type-fifth.png') no-repeat;
+    background: url('/assets/png/type-fifth.png') no-repeat;
 }
 
 .type-sixth {
-    background: url('/img/type-sixth.png') no-repeat;
+    background: url('/assets/png/type-sixth.png') no-repeat;
+}
+
+.schedule {
+    margin: 0 auto 350px;
+    max-width: 1400px; 
+}
+
+.schedule h1 {
+    padding-bottom: 50px;
+}
+
+.schedule h1::after {
+    content: url(/assets/svg/info.svg);
+    padding-left: 13px;
+}
+
+.sliders {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.slider-first {
+    display: flex;
+    border-radius: 30px;
+    background: #5FA494;
+}
+
+.slider-info {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    font-family: 'Phenomena';
+    color: #fff;
+    flex-shrink: 0;
+}
+
+.slider-info h1::first-letter, .second-letter {
+    opacity: 1;
+    font-weight: 400;
+    font-size: 235px;
+}
+
+.slider-numbers {
+    opacity: .6;
+    font-weight: 400;
+    font-size: 40px;
+}
+
+.arrows {
+    align-self: flex-end;
+    margin: 0;
+    padding: 35px;
+}
+
+.slider-arrow {
+    width: 47px;
+    height: 47px;
+}
+
+.slider-arrow:first-child {
+    transform: scaleX(-1);
+    opacity: .5;
+}
+
+.slider-title {
+    padding: 0 200px 0 0px;
+    margin: 0;
+}
+
+.slider-second {
+    margin-left: 50px;
 }
