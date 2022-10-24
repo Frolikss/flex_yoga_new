@@ -1,6 +1,7 @@
 a {
     text-decoration: none;
     color: inherit;
+    white-space: nowrap;
 }
 
 body {
@@ -20,7 +21,7 @@ button {
 
 .header .container {
     margin: 30px 0 150px 0px;
-    padding: 0 15px;
+    padding: 0 16px;
 }
 
 .nav {
@@ -45,13 +46,18 @@ button {
     line-height: 30px;
 }
 
+.header-burger {
+    display: none;
+}
+
 .headline {
     display: flex;
     justify-content: space-between;
 }
 
 .headline .container {
-    margin-top: 30px;
+    padding-top: 30px;
+    margin: 0 auto;
     max-width: 100%;
 }
 
@@ -59,18 +65,32 @@ button {
     max-width: 100%;
 }
 
+.headline-text {
+    display: none;
+    font-family: 'Phenomena';
+    font-weight: 400;
+    font-size: 150px;
+    line-height: 79.5%;
+}
+
+.headline-subtext {
+    display: block;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 100%;
+    margin-top: 22px;
+}
+
 .headline::before {
     content: "";
     width: 15%;
-    max-width: 100%;
-    background: url(/assets/png/bg-leafs.png) no-repeat bottom;
+    background: url(/assets/png/bg-leafs.png) no-repeat;
     background-size: 100% auto;
 }
 
 .headline::after {
     content: "";
     width: 15%;
-    max-width: 100%;
     background: url(/assets/png/bg-leafs.png) no-repeat;
     background-size: 100% auto;
     transform: scaleX(-1);
@@ -84,6 +104,7 @@ button {
 .level-title .container {
     margin: 0 auto;
     max-width: 1300px;
+    padding: 16px;
 }
 
 .title-row {
@@ -148,6 +169,11 @@ button {
     flex: 0 1 50%;
 }
 
+.level-tab:hover .tab-head {
+    font-family: 'Gilroy Regular';
+    opacity: .8;
+}
+
 .level-tab:hover .tab-head-block {
     justify-content: flex-end;
     flex: 0 1 50%;
@@ -166,6 +192,7 @@ button {
 
 .tab-head {
     writing-mode: vertical-rl;
+    transform: scale(-1, -1);
 }
 
 .tab-info {
@@ -187,6 +214,10 @@ button {
     padding: 13px 48px 16px;
 }
 
+.info-image {
+    display: none;
+}
+
 .arrow {
     display: block;
     width: 57px; 
@@ -194,13 +225,10 @@ button {
     margin-bottom: 60px;
 }
 
-.tab-head {
-    transform: scale(-1, -1);
-}
-
 .coach .container {
     max-width: 1300px;
     margin: 0 auto;
+    padding: 0 16px;
 }
 
 .coach-row {
@@ -210,6 +238,7 @@ button {
 
 .coach-img {
     display: block;
+    max-width: 100%;
 }
 
 .arrows {
@@ -274,6 +303,7 @@ button {
 }
 
 .yoga-links {
+    display: flex;
     font-family: 'Gilroy Bold', serif;
     font-size: 20px;
     line-height: 130%;
@@ -286,16 +316,21 @@ button {
     border-style: solid;
     border-width: 0 0 0 21px;
     border-image: url('/assets/png/pill-orange.png') 0 0 0 21;
+    margin-right: 40px;
 }
 
 .yoga-link:last-child {
     border-image: url('/assets/png/pill-green.png') 0 0 0 21;
-    margin-left: 42px;
+}
+
+.types {
+    margin: 390px auto 330px;
 }
 
 .types .container {
     max-width: 1300px;
-    margin: 390px auto 330px;
+    margin: 0 auto;
+    padding: 0 16px;
 }
 /* TODO: hover */
 .yoga-types {
@@ -305,43 +340,45 @@ button {
     margin-top: 75px;
 }
 
-.yoga-types::after {
-    content: "";
-    flex: auto;
-}
-
 .yoga-item {
     font-family: "Gilroy Semibold", serif;
     font-size: 25px;
     line-height: 30px;
     color: #FFF;
     border-radius: 19px;
-    height: 0;
-    padding-top: 29.91%;
-    margin-right: 30px;
     margin-bottom: 40px;
-    flex: 1 1 20%;
+    flex: 0 1 22%; 
 }
 
 .yoga-item p {
-    display: none;
     font-family: 'Gilroy Medium', serif;
     font-size: 20px;
     max-width: 430px;
  }
 
+ .yoga-item:not(:first-child) p {
+    display: none;
+ }
 
-.yoga-item:hover {
-    flex: 1 1 70%;
+ .yoga-item:not(:first-child) h2 {
+    font-size: 25px;
+    line-height: 30px;
+    padding: 35px;
+    margin: 0;
+ }
+
+.yoga-item:first-child {
     background-color: #E6BE80;
+    padding: 60px;
+    flex: 0 1 65%
 }
-
-.yoga-item:hover > p {
-    display: block;
+/* TODO: find a way to stretch div to image size */
+.yoga-item:not(:first-child) {
+    height: 323px;
 }
 
 .type-first {
-    background: url('/assets/png/yoga-first.png') no-repeat;
+    background: url('/assets/png/type-first-hover.png') no-repeat bottom right;
  }
 
 
@@ -368,20 +405,16 @@ button {
 .schedule .container {
     margin: 0 auto 350px;
     max-width: 1400px;
+    padding: 0 16px;
 }
 
 .schedule-title {
+    display: flex;
     padding-bottom: 50px;
 }
 
-.schedule h1::after {
-    content: url(/assets/svg/info.svg);
-    padding-left: 13px;
-}
-
-.schedule-title .container {
-    margin: 0 auto;
-    max-width: 1300px; 
+.schedule-info-image {
+    margin-left: 12px;
 }
 
 .schedule-wrapper {
@@ -475,6 +508,10 @@ button {
     background-color: #BF2222;
 }
 
+.details {
+    margin-left: 100px;
+}
+
 .sliders {
     display: flex;
     justify-content: flex-end;
@@ -530,4 +567,161 @@ button {
 
 .slider-second {
     margin-left: 50px;
+}
+
+@media (max-width: 1300px) {
+    .menu, .phone {
+        display: none;
+    }
+    .header-burger {
+        display: block;
+        position: relative;
+        width: 30px;
+        height: 20px;
+    }
+
+    .header-burger::before,
+    .header-burger::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        left: 0;
+        background-color: #5FA494;
+        height: 2px;
+    }
+
+    .header-burger span {
+        position: absolute;
+        background-color: #5FA494;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        top: 9px
+    }
+
+    .header-burger::before {
+        top: 0;
+    }
+
+    .header-burger::after {
+        bottom: 0;
+    }
+
+    .yoga-image {
+        display: none;
+    }
+
+    .headline-text {
+        display: block;
+    }
+
+    .levels {
+        margin: 150px 0 170px;
+    }
+
+    .types {
+        margin-top: 150px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .level-info {
+        flex-direction: column;
+        padding: 0 15px;
+        margin: 30px 0;
+        flex: 0 1 50%;
+    }
+
+    .level-tab {
+        flex-direction: column;
+        padding: 25px;
+    }
+
+    .level-tab:hover .tab-info {
+        align-items: center;
+    }
+
+    .tab-head-block {
+        flex-direction: row-reverse;
+    }
+
+    .tab-join {
+        margin: 60px 0 60px;
+    }
+
+    .arrow {
+        margin: 0;
+        transform: rotate(90deg);
+        width: 40px;
+        height: 40px;
+    }
+
+    .tab-head {
+        writing-mode: horizontal-tb;
+        transform: none;
+    }
+
+    .coach-row {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 680px) {
+    .title {
+        font-size: 30px;
+    }
+
+    .title-info {
+        display: none;
+    }
+    
+    .info-image {
+        display: block;
+    }
+
+    .schedule-title {
+        justify-content: space-between;
+        margin: 0;
+    }
+
+    .yoga-links {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 320px) {
+    .logo-image {
+        max-width: 70%;
+    }
+
+    .tab-head {
+        font-size: 20px;
+    }
+    
+    .tab-text {
+        font-size: 20px;
+        line-height: 24px;
+    }
+
+    .tab-join {
+        font-size: 18px;
+        line-height: 21px;
+        padding: 12px 40px;
+    }
+
+    .number {
+        font-size: 70px;
+    }
+
+    .coach-count {
+        font-size: 35px;
+        line-height: 94%;
+        padding-left: 9px;
+    }
+
+    .yoga-link {
+        margin-bottom: 16px;
+    }
 }
