@@ -622,6 +622,14 @@ button {
     .types {
         margin-top: 150px;
     }
+
+    .yoga-item {
+        flex: 0 1 21%;
+    }
+
+    .yoga-item:first-child {
+        flex: 0 1 100%
+    }
 }
 
 @media (max-width: 1024px) {
@@ -665,6 +673,14 @@ button {
         flex-direction: column;
         align-items: center;
     }
+
+    .types {
+        padding: 0 16px;
+    }
+
+    .yoga-item {
+        flex: 0 1 32%;
+    }
 }
 
 @media (max-width: 680px) {
@@ -680,6 +696,11 @@ button {
         display: block;
     }
 
+    .tab-text {
+        font-size: 20px;
+        line-height: 24px;
+    }
+
     .schedule-title {
         justify-content: space-between;
         margin: 0;
@@ -688,6 +709,35 @@ button {
     .yoga-links {
         align-items: flex-start;
         flex-direction: column;
+    }
+
+    .yoga-link {
+        margin-bottom: 16px;
+    }
+
+    .yoga-item {
+        flex: 0 1 45%;
+    }
+}
+
+@media (max-width: 440px) {
+    .yoga-types {
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+
+    .yoga-item {
+        flex: 0 1 100%;
+        background-size: 100%;
+    }
+
+    .yoga-item p {
+        font-size: 18px;
+    line-height: 21px;
+    }
+
+    .yoga-item:first-child {
+        background: #E6BE80;
     }
 }
 
@@ -698,11 +748,6 @@ button {
 
     .tab-head {
         font-size: 20px;
-    }
-    
-    .tab-text {
-        font-size: 20px;
-        line-height: 24px;
     }
 
     .tab-join {
