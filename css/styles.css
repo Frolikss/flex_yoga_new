@@ -96,19 +96,21 @@ p {
 }
 
 .headline::before {
-    height: 100%;
+    content: "";
+    height: 480px;
     width: 300px;
-    left: -10%;
-    top: 130%;
+    left: 10px;
+    top: 100px;
     transform: rotate(11deg) scale(3);
 }
 
 .headline::after {
-    height: 100%;
+    content: "";
+    height: 480px;
     width: 300px;
     transform: scaleX(-1) scale(2) rotate(15deg);
-    right: -10%;
-    top: 81%;
+    right: 10px;
+    top: 81px;
 }
 
 .levels {
@@ -392,8 +394,14 @@ p {
 }
 
 .type-first {
-    background: url('/assets/png/type-first-hover.png') no-repeat bottom right;
- }
+    position: relative;
+}
+
+.type-first-hover {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
 
 
 .type-second {
