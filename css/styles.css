@@ -59,16 +59,13 @@ p {
 }
 
 .headline {
+    position: relative;
     text-align: center;
 }
 
 .headline .container {
     padding-top: 30px;
     margin: 0 auto;
-    max-width: 100%;
-}
-
-.yoga-image {
     max-width: 100%;
 }
 
@@ -91,26 +88,28 @@ p {
 .headline::before, .headline::after {
     content: "";
     position: absolute;
-    background: url(/assets/png/bg-leafs.png) no-repeat;
     background-size: 100% auto;
 }
 
 .headline::before {
-    content: "";
-    height: 480px;
-    width: 300px;
-    left: 10px;
-    top: 100px;
-    transform: rotate(11deg) scale(3);
+    background: url(/assets/png/bg-leaf-left.png) no-repeat;
+    width: 28%;
+    height: 100%;
+    left: 0;
+    z-index: -1;
 }
 
 .headline::after {
-    content: "";
-    height: 480px;
-    width: 300px;
-    transform: scaleX(-1) scale(2) rotate(15deg);
-    right: 10px;
-    top: 81px;
+    background: url(/assets/png/bg-leaf-right.png) no-repeat;
+    background-size: cover;
+    width: 28%;
+    height: 100%;
+    right: 0;
+    top: 0;
+}
+
+.leafs-mobile {
+    display: none;
 }
 
 .levels {
@@ -403,6 +402,9 @@ p {
     bottom: 0;
 }
 
+.yoga-item-image {
+    display: none;
+}
 
 .type-second {
     background: url('/assets/png/type-second.png') no-repeat;
@@ -564,7 +566,6 @@ p {
     flex-direction: column;
     font-family: 'Phenomena';
     color: #fff;
-    flex-shrink: 0;
 }
 
 .slider-info h1::first-letter, .second-letter {
@@ -719,7 +720,9 @@ p {
     align-items: center;
     margin: 0 auto;
     max-width: 1300px;
+    padding: 0 15px;
 }
+
 
 .review-progress-bar {
     height: 10px;
@@ -728,6 +731,10 @@ p {
 
 .review-progress-bar {
     flex-basis: 80%;
+}
+
+.dots {
+    display: none;
 }
 
 .review-arrow:first-child {
@@ -743,10 +750,12 @@ p {
 .subscription .container {
     margin: 0 auto;
     max-width: 1300px;
+    padding: 0 15px;
 }
 
 .subscription-row {
     display: flex;
+    justify-content: space-between;
 }
 
 .subscription-col {
@@ -770,8 +779,7 @@ p {
     background: #EBF0F9;
     border-radius: 20px;
     padding: 35px;
-    margin-right: 3%;
-    margin-bottom: 3%;
+    margin-bottom: 6%;
     transition: all 1s ease;
     transform-origin: right bottom;
 }
@@ -815,6 +823,7 @@ p {
 .subscription-item:hover {
     background-color: #E6BE80;
     transform: scale(1.2);
+    z-index: 1;
 }
 
 .subscription-item:hover .subscription-name {
@@ -835,6 +844,206 @@ p {
 
 .subscription-item:hover .submit {
     display: block;
+}
+
+.faq-title {
+    max-width: 1300px;
+    margin: 0 auto;
+    margin-bottom: 60px;
+}
+
+.faq-tab {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.faq-info {
+    width: 65%;
+}
+
+.faq-item {
+    font-family: 'Gilroy Medium';
+    font-size: 25px;
+    line-height: 29px;
+    color: #5FA494;
+    padding: 35px 0; 
+    border-bottom: 2px solid #B9B9B9;
+   
+}
+
+.faq-quest {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.minus-image {
+    display: none;
+}
+
+.faq-onclick {
+    display: none;
+}
+
+.faq-form {
+    padding: 35px;
+    background-color: #F2F5FB;
+    border-radius: 26px;
+    align-self: flex-start;
+}
+
+.question-title {
+    font-family: 'Gilroy Medium';
+    font-size: 35px;
+    width: 60%;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.name, .question {
+    font-family: 'Gilroy Medium';
+    font-size: 18px;
+    color: #75787C;
+    padding: 24px 35px;
+    background-color: #EAEFF8;
+    border: none;
+    border-radius: 100px;
+    margin-bottom: 3%;
+}
+
+.send {
+    font-family: 'Gilroy Bold';
+    font-size: 20px;
+    color: #5FA494;
+    background: none;
+    border: 2px solid #5FA494;
+    border-radius: 100px;
+    padding: 18px 0;
+    margin-top: 10%;
+}
+
+.question {
+    resize: none;
+    border-radius: 35px;
+}
+
+.faq .container {
+    padding: 0 15px;
+}
+
+.faq-expert {
+    margin-right: 30px;
+}
+
+.faq-answer {
+    font-family: 'Gilroy Medium';
+}
+
+.faq-item:hover {
+    padding-bottom: 0;
+}
+
+.faq-item:hover .faq-question {
+    color: #000;
+}
+
+.faq-item:hover .faq-onclick{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: #000;
+    font-size: 20px;
+    padding: 35px;
+}
+
+.faq-item:hover .plus-image {
+    display: none;
+}
+
+.faq-item:hover .minus-image {
+    display: block;
+}
+
+.call-to-aciton {
+    margin: 300px 0 400px;
+    position: relative;
+}
+
+.call-to-aciton .container {
+    margin-bottom: 350px;
+}
+
+.cta-title {
+    font-family: 'Phenomena';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 90px;
+    line-height: 100%;
+    max-width: 390px;
+    margin-bottom: 40px;
+}
+
+.cta-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 30% 0;
+}
+
+.call-to-aciton::before, .call-to-aciton::after {
+    content: "";
+    position: absolute;
+}
+
+.call-to-aciton::before {
+    background: url(/assets/png/bg-shoes-dumbbell.png) no-repeat;
+    width: 28%;
+    height: 100%;
+    left: 0;
+    top: 30%;
+}
+
+.call-to-aciton::after {
+    background: url(/assets/png/bg-bush-mat.png) no-repeat;
+    background-size: 100% auto;
+    background-position: center;
+    width: 28%;
+    height: 100%;
+    right: 0;
+    top: 0;
+}
+
+.cta-text, .cta-phone, .cta-text {
+    font-family: 'Gilroy Medium';
+    font-size: 25px;
+    line-height: 29px;
+}
+
+.cta-text {
+    max-width: 470px;
+}
+
+.cta-phone {
+    font-size: 20px;
+    line-height: 24px;
+    color: #B0B6C1;
+    margin: 70px 0 30px;
+}
+
+.cta-number {
+    display: block;
+    font-size: 40px;
+    line-height: 47px;
+    color: #182949;
+}
+
+.cta-leave-info {
+    color: #5FA494;
 }
 
 .footer {
@@ -886,14 +1095,14 @@ p {
     padding-bottom: 15px;
 }
   
-.address-body .text {
+.address-body .text, .email-subtext {
     font-size: 18px;
     line-height: 21px;
     color: #182949;
     opacity: 0.7;
 }
   
-.address-body .street {
+.street {
     white-space: nowrap;
     line-height: 29px;
     color: #182949;
@@ -906,6 +1115,10 @@ p {
     color: #182949;
 }
   
+.email-subtext {
+    display: none;
+}
+
 .address-body .email {
     font-family: 'Gilroy Semibold', serif;
     line-height: 30px;
@@ -947,11 +1160,52 @@ p {
 .footer-social .inst {
     margin-right: 15px;
 }
+
+.logo-mini {
+    display: none;
+}
+
+.logo-mini-image {
+    width: 70px;
+}
   
+@media (max-width: 1650px) {
+    .headline::before {
+        background-size: cover;
+        width: 37%;
+        height: 100%;
+        left: 0;
+        z-index: -1;
+    }
+    
+    .headline::after {
+        background-size: cover;
+        width: 34%;
+        height: 100%;
+        right: 0;
+        top: 0;
+    }
+
+    .yoga-image {
+        width: 40%;
+    }
+}
+
+@media (max-width: 1500px) {
+    .subscription-col:first-child .subscription-item {
+        transform-origin: left bottom;
+    }
+}
+
+@media (max-width: 1400px) {
+    .footer-menu {
+        display: none;
+    }
+}
 
 @media (max-width: 1300px) {
     .logo-image {
-        width: 80%;
+        max-width: 80%;
     }
 
     .menu-item {
@@ -964,14 +1218,6 @@ p {
 
     .phone {
         font-size: 18px;
-    }
-
-    .yoga-image {
-        display: none;
-    }
-
-    .headline-text {
-        display: block;
     }
 
     .levels {
@@ -988,6 +1234,51 @@ p {
 
     .yoga-item:first-child {
         flex: 0 1 100%
+    }
+
+    .subscription {
+        background: none;
+    }
+
+    .faq-info {
+        width: 60%;
+    }
+
+    .call-to-aciton::before {
+        background: url(/assets/png/bg-shoes-dumbbell.png) no-repeat;
+        background-size: contain;
+        width: 28%;
+        height: 100%;
+        left: 0;
+        top: 30%;
+    }
+    
+    .call-to-aciton::after {
+        background: url(/assets/png/bg-bush-mat.png) no-repeat;
+        background-size: contain;
+        background-position: center;
+        width: 28%;
+        height: 100%;
+        right: 0;
+        top: 0;
+    }
+
+    .footer .container {
+        padding: 90px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .address-img {
+        display: none;
+    }
+
+    .footer-social p {
+        display: none;
+    }
+
+    .faq-info {
+        width: 55%;
     }
 }
 
@@ -1044,6 +1335,80 @@ p {
     .yoga-item {
         flex: 0 1 32%;
     }
+
+    .yoga-types::after {
+        content: "";
+        flex: 0 1 32%;
+    }    
+
+    .subscription-item {
+        padding: 20px;
+    }
+
+    .subscription-text {
+        font-size: 16px;
+    }
+
+    .price {
+        font-size: 18px;
+    }
+
+    .submit {
+        font-size: 16px;
+        padding: 12px 16px;
+    }
+
+    .faq-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .faq-title::after {
+        content: url(/assets/svg/faq-form.svg);
+        width: 45px;
+        height: 45px;
+    }
+
+    .faq-info {
+        width: 100%;
+    }
+
+    .faq-form {
+        display: none;
+    }
+}
+
+@media (max-width: 940px) {
+    .yoga-item-header {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .yoga-item p {
+        max-width: 100%;
+    }
+
+    .type-first-hover {
+        display: none;
+    }
+
+    .yoga-item-image {
+        display: block;
+    }
+
+    .cta-title {
+        font-size: 60px;
+        max-width: 100%;
+    }
+
+    .cta-number {
+        font-size: 25px;
+    }
+
+    .cta-text {
+        font-size: 20px;
+    }
 }
 
 @media (max-width: 820px) {
@@ -1085,15 +1450,159 @@ p {
         bottom: 0;
     }
 
+    .footer .container {
+        padding: 30px;
+    }
+
+    .reviews-title {
+        margin: 0;
+    }
+
+    .reviews-sliders {
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+
+    .review-progress {
+        justify-content: center;
+    }
+
+    .review-progress-bar, .review-progres-arrows {
+        display: none;
+    }
+
+    .dots {
+        display: flex;
+        margin-top: 20px;
+    }
+
+    .dot {
+        width: 15px;
+        height: 15px;
+        background-color: #D1D4DB;
+        border-radius: 50%;
+        margin-left: 5px;
+    }
+
+    .dot:first-child {
+        background-color: #182949;
+    }
+
+    .subscription {
+        margin: 100px 0
+    }
+
+    .footer-logo {
+        display: none;
+    }
+
+    .logo-mini {
+        display: block;
+    }
+
+    .footer-address {
+        width: 100%;
+    }
+
+    .address-row {
+        align-items: flex-start;
+    }
+
+    .email-subtext {
+        display: block;
+        padding: 0;
+        margin-bottom: 3px;
+    }
+
+    .email {
+        margin: 40px 0;
+    }
+
+    .footer-row-second {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        margin-top: 0;
+    }
+
+    .footer-social {
+        margin-bottom: 40px;
+    }
 }
 
 @media (max-width: 740px) {
+    .headline::before, .headline::after {
+        background: none;
+    }
+
+    .leafs-mobile {
+        display: block;
+    }
+
+    .bg-leaf-right-mobile {
+        margin-right: 0;
+        margin-left: auto;
+    }
+
+    .yoga-image {
+        display: none;
+    }
+
+    .headline-text {
+        display: block;
+    }
+
     .title-info {
         display: none;
     }
     
     .info-image {
         display: block;
+    }
+
+    .yoga-item:not(:first-child) h2 {
+        font-size: 20px;
+    }
+
+    .subscription-row {
+        flex-direction: column;
+    }
+
+    .subscription-col:nth-child(2) {
+        margin-top: 0;
+    }
+
+
+    .subscription-item {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .subscription-item {
+        flex-direction: column;
+        transition: none;
+        align-items: flex-start;
+    }
+
+    .subscription-item:hover {
+        transform: none;
+    }
+
+    .price-row {
+        align-self: normal;
+    }
+
+    .price {
+        padding-bottom: 0;
+    }
+
+
+    .faq-question {
+        font-size: 18px;
+    }
+
+    .faq-answer {
+        font-size: 16px;
     }
 }
 
@@ -1124,9 +1633,36 @@ p {
     .yoga-item {
         flex: 0 1 45%;
     }
+
+    .call-to-aciton::before {
+        background: none
+    }
+    
+    .call-to-aciton::after {
+        background:  url(/assets/png/bg-cta-mobile.png) no-repeat;
+        background-size: contain;
+        background-position: center;
+        width: 20%;
+        height: 100%;
+        right: 0;
+        top: 9%;
+    }
+
+    .cta-info {
+        margin:0 0 0 35px;
+    }
+
+    .cta-title {
+        font-size: 50px;
+        max-width: 80%;
+    }
+
+    .cta-text {
+        max-width: 90%;
+    }
 }
 
-@media (max-width: 440px) {
+@media (max-width: 500px) {
     .yoga-types {
         flex-direction: column;
         flex-wrap: nowrap;
@@ -1137,17 +1673,69 @@ p {
         background-size: 100%;
     }
 
+    .yoga-item:first-child h2 {
+        font-size: 20px;
+    }
+
     .yoga-item p {
         font-size: 18px;
-    line-height: 21px;
+        line-height: 21px;
     }
 
-    .yoga-item:first-child {
-        background: #E6BE80;
+    .review-slider-inner {
+        justify-content: flex-start;
+        flex-direction: column;
+        padding: 25px;
     }
 
+    .quote-image {
+        width: 30px;
+    }
+
+    .review-text {
+        font-size: 18px;
+        margin: 10% 0;
+    }
+
+    .faq-expert {
+        display: none;
+    }
+
+    .text, .time {
+        font-size: 16px;
+    }
+
+    .street {
+        font-size: 18px;
+        line-height: 21px;
+        max-width: 190px;
+        white-space: normal;
+    }
+    
+    .logo-mini-image {
+        width: 35px;
+    }
+}
+
+@media (max-width: 440px) {
     .tab-head {
         font-size: 20px;
+    }
+
+    .faq-item:hover .faq-onclick {
+        padding: 20px;
+    }
+
+    .faq-answer {
+        line-height: 19px;
+    }
+
+    .inst-image {
+        width: 30px;
+    }
+
+    .vk-image {
+        width: 170px;
     }
 }
 
@@ -1175,4 +1763,24 @@ p {
     .yoga-link {
         margin-bottom: 16px;
     }
+
+    .cta-title {
+        font-size: 50px;
+        max-width: 80%;
+    }
+
+    .cta-text {
+        max-width: 90%;
+    }
+
+    .call-to-aciton::after {
+        background:  url(/assets/png/bg-cta-mobile.png) no-repeat;
+        background-size: contain;
+        background-position: center;
+        width: 36%;
+        height: 100%;
+        right: 0;
+        top: 0%;
+    }
 }
+
