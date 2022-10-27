@@ -160,6 +160,7 @@ p {
     display: flex;
     justify-content: space-between;
     position: relative;
+    color: #E6BE80;
     background: #E6BE80;
     font-family: 'Gilroy Bold', serif;
     font-size: 22px;
@@ -188,6 +189,10 @@ p {
 .level-tab:last-child {
     background: #F08365;
     color: #F08365;
+}
+
+.level-tab .tab-head, .tab-info {
+    color: #fff;
 }
 
 .level-tab:hover {
