@@ -155,7 +155,7 @@ p {
     color: #fff;
     margin: 0 200px 200px 0;
 }
-/* TODO: Add bg image on hover */
+
 .level-tab {
     display: flex;
     justify-content: space-between;
@@ -178,7 +178,7 @@ p {
     bottom: 0;
     color: inherit;
     box-shadow: inset -100px 0 37px -7px;
-    background: url(/assets/svg/bg-chains.svg);
+    background: url(/assets/svg/bg-chains.svg) no-repeat;
 }
 
 .level-tab:first-child {
@@ -235,6 +235,7 @@ p {
 
 .tab-info {
     display: none;
+    z-index: 1;
 }
 
 .tab-text {
@@ -1401,6 +1402,8 @@ p {
         flex-direction: column;
         padding: 25px;
     }
+
+    .level-tab:hover
 
     .level-tab:hover .tab-info {
         align-items: center;
