@@ -28,7 +28,7 @@ p {
 }
 
 .header .container {
-    margin: 30px 0 150px 0px;
+    margin-top: 30px;
     padding: 0 16px;
 }
 
@@ -59,17 +59,20 @@ p {
 }
 
 .headline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
     position: relative;
     text-align: center;
-    height: 100vh;
+    height: calc(100vh - 60px);
     overflow: hidden;
 }
 
 .headline .container {
-    padding-top: 30px;
     margin: 0 auto;
     max-width: 100%;
-
 }
 
 .headline-text {
@@ -79,10 +82,11 @@ p {
     text-align: center;
     flex-direction: column;
     min-height: 100vh;
-    font-family: 'Phenomena';
+    font-family: 'Phenomena', serif;
     font-weight: 400;
     font-size: 150px;
     line-height: 79.5%;
+    margin-top: 0%;
 }
 
 .headline-subtext {
@@ -132,7 +136,7 @@ p {
 }
 
 .title {
-    font-family: 'Phenomena', serif;
+    font-family: 'Phenomena', sans-serif;
     font-weight: 700;
     font-size: 50px;
     line-height: 100%;
@@ -167,6 +171,7 @@ p {
     padding: 60px 80px;
     flex-basis: 5%;
     transition: flex 1s;
+    height: 22em;
 }
 
 .level-tab:hover::before {
@@ -208,7 +213,7 @@ p {
 }
 
 .level-tab:hover .tab-head {
-    font-family: 'Gilroy Regular';
+    font-family: 'Gilroy Regular', serif;
     opacity: .8;
 }
 
@@ -271,8 +276,35 @@ p {
 }
 
 .coach-row {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        'photo header'
+        'photo text' 
+        'photo text'
+}
+
+.coach-title {
+    grid-area: header;
+    align-self: center;
+}
+
+.coach-photo {
+    grid-area: photo;
+}
+
+.coach-data {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    grid-area: text;
+}
+
+.coach-data p {
+    font-family: 'Gilroy Medium', serif;
+    line-height: 19px;
+    max-width: 550px;
+    margin-bottom: 5%;
 }
 
 .coach-img {
@@ -295,11 +327,10 @@ p {
 .coach-numbers {
     display: flex;
     align-items: center;
-
 }
 
 .number {
-    font-family: 'Phenomena', serif;
+    font-family: 'Phenomena', sans-serif;
     font-style: normal;
     font-weight: 200;
     font-size: 134px;
@@ -308,18 +339,12 @@ p {
 
 .coach-count {
     display: inline-block;
-    font-family: 'Phenomena', serif;
+    font-family: 'Phenomena', sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 67px;
     line-height: 94%;
     max-width: 200px;
-    padding-left: 13px;
-}
-
-.coach-data {
-    max-width: 550px;
-    margin-bottom: 45px;
 }
 
 .coach-name {
@@ -327,18 +352,12 @@ p {
     font-size: 70px;
     line-height: 85px;
     margin: 0;
+    padding-bottom: 5%;
+    border-bottom: 4px solid #BABFC8;
 }
 
-.coach-hr {
-    opacity: 0.3;
-    border: 2px solid #182949;
-    margin: 23px 0 34px;
-}
-
-.coach-info p {
-    font-family: 'Gilroy Medium', serif;
-    font-size: 16px;
-    line-height: 19px;
+.coach-text {
+    margin-top: 5%;
 }
 
 .yoga-links {
@@ -399,7 +418,7 @@ p {
     display: none;
  }
 
- .yoga-item:not(:first-child) h2 {
+ .yoga-item:not(:first-child) h3 {
     font-size: 25px;
     line-height: 30px;
     padding: 35px;
@@ -470,7 +489,7 @@ p {
 }
 
 .schedule-table {
-    font-family: Phenomena, sans-serif;
+    font-family: 'Phenomena', sans-serif;
     display: block;
     border-collapse: collapse;
 }
@@ -495,6 +514,16 @@ p {
 
 .schedule-table th:last-child {
     border: none;
+}
+
+.schedule-wrapper::-webkit-scrollbar {
+    height: 10px;
+    margin: 10px;
+    background-color: #E8EAED;
+}
+
+.schedule-wrapper::-webkit-scrollbar-thumb {
+    background-color: #5FA494;
 }
 
 .schedule-time {
@@ -587,11 +616,11 @@ p {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    font-family: 'Phenomena';
+    font-family: 'Phenomena', sans-serif;
     color: #fff;
 }
 
-.slider-info h1::first-letter, .second-letter {
+.slider-info h1::first-letter {
     opacity: 1;
     font-weight: 400;
     font-size: 235px;
@@ -620,8 +649,13 @@ p {
 }
 
 .slider-title {
-    padding: 0 200px 0 0px;
-    margin: 0;
+    padding: 0 200px 0 0 ;
+    margin: 0 0 0 35px;
+    font-size: 235px;
+}
+
+.slider:nth-child(2) .slider-title {
+    margin: 0 35px 0 0;
 }
 
 .slider-second {
@@ -635,6 +669,10 @@ p {
 
 .slider-third {
     opacity: .5;
+}
+
+.slider-dots {
+    display: none;
 }
 
 .dot {
@@ -704,6 +742,8 @@ p {
 .review-hover {
     width: 100%;
     height: 100%;
+    object-fit: cover;
+    border-radius: 30px;
 }
 
 .quote-image {
@@ -720,7 +760,7 @@ p {
 }
 
 .review-text {
-    font-family: 'Gilroy Medium';
+    font-family: 'Gilroy Medium', serif;
     font-size: 20px;
     line-height: 140%;
     width: 280px;
@@ -734,7 +774,7 @@ p {
 }
 
 .reviewer {
-    font-family: 'Gilroy Semibold';
+    font-family: 'Gilroy Semibold', serif;
     font-size: 25px;
     line-height: 150%;
     z-index: 2;
@@ -783,13 +823,18 @@ p {
 }
 
 .subscription .container {
-    margin: 0 auto;
-    max-width: 1300px;
     padding: 0 15px;
+}
+
+.subscription-title {
+    max-width: 1300px;
+    margin: 0 auto;
 }
 
 .subscription-row {
     display: flex;
+    max-width: 1000px;
+    margin: 0 auto;
     justify-content: space-between;
 }
 
@@ -816,16 +861,27 @@ p {
     padding: 35px;
     margin-bottom: 6%;
     transition: all 1s ease;
+}
+
+.subscription-col:first-child .subscription-item {
     transform-origin: right bottom;
 }
 
+.subscription-col:nth-child(2) .subscription-item {
+    transform-origin: center center;
+}
+
+.subscription-col:last-child .subscription-item {
+    transform-origin: left bottom;
+}
+
 .subscription-name {
-    font-family: 'Gilroy Medium';
+    font-family: 'Gilroy Medium', serif;
     font-size: 20px;
 }
 
 .subscription-text {
-    font-family: 'Gilroy Medium';
+    font-family: 'Gilroy Medium', serif;
     display: none;
     color: #fff;
     font-size: 18px;
@@ -839,7 +895,7 @@ p {
 }
 
 .price {
-    font-family: 'Gilroy Bold';
+    font-family: 'Gilroy Bold', serif;
     font-size: 24px;
     line-height: 30px;
     opacity: .2;
@@ -848,7 +904,7 @@ p {
 
 .submit {
     display: none;
-    font-family: 'Gilroy Medium';
+    font-family: 'Gilroy Medium', serif;
     font-size: 20px;
     background-color: #fff;
     padding: 14px 20px;
@@ -890,7 +946,7 @@ p {
 .faq-tab {
     display: flex;
     justify-content: space-between;
-    max-width: 1400px;
+    max-width: 1300px;
     margin: 0 auto;
 }
 
@@ -899,7 +955,7 @@ p {
 }
 
 .faq-item {
-    font-family: 'Gilroy Medium';
+    font-family: 'Gilroy Medium', serif;
     font-size: 25px;
     line-height: 29px;
     color: #5FA494;
@@ -930,7 +986,7 @@ p {
 }
 
 .question-title {
-    font-family: 'Gilroy Medium';
+    font-family: 'Gilroy Medium', serif;
     font-size: 35px;
     width: 60%;
 }
@@ -941,7 +997,7 @@ p {
 }
 
 .name, .question {
-    font-family: 'Gilroy Medium';
+    font-family: 'Gilroy Medium', serif;
     font-size: 18px;
     color: #75787C;
     padding: 24px 35px;
@@ -952,7 +1008,7 @@ p {
 }
 
 .send {
-    font-family: 'Gilroy Bold';
+    font-family: 'Gilroy Bold', serif;
     font-size: 20px;
     color: #5FA494;
     background: none;
@@ -976,7 +1032,7 @@ p {
 }
 
 .faq-answer {
-    font-family: 'Gilroy Medium';
+    font-family: 'Gilroy Medium', serif;
 }
 
 .faq-item:hover {
@@ -985,6 +1041,10 @@ p {
 
 .faq-item:hover .faq-question {
     color: #000;
+}
+
+.faq-hover {
+    cursor: pointer;
 }
 
 .faq-item:hover .faq-onclick{
@@ -1014,7 +1074,7 @@ p {
 }
 
 .cta-title {
-    font-family: 'Phenomena';
+    font-family: 'Phenomena', sans-serif;
     font-style: normal;
     font-weight: 700;
     font-size: 90px;
@@ -1054,7 +1114,7 @@ p {
 }
 
 .cta-text, .cta-phone, .cta-text {
-    font-family: 'Gilroy Medium';
+    font-family: 'Gilroy Medium', serif;
     font-size: 25px;
     line-height: 29px;
 }
@@ -1272,6 +1332,10 @@ p {
     .subscription-col:first-child .subscription-item {
         transform-origin: left bottom;
     }   
+
+    .subscription-col:last-child .subscription-item {
+        transform-origin: right bottom;
+    }
 }
 
 @media (max-width: 1400px) {
@@ -1441,8 +1505,35 @@ p {
     }
 
     .coach-row {
-        flex-direction: column;
-        align-items: center;
+        grid-template-rows: auto 1fr 1fr;
+        grid-template-areas: 
+        'header header'
+        'photo photo'
+        'text text';
+        justify-items: center;
+    }
+
+    .coach-title {
+        align-self: end;
+    }
+
+    .coach-data p {
+        max-width: 100%;
+        font-size: 20px;
+        line-height: 21px;
+        text-align: justify;
+    }
+
+    .coach-numbers {
+        justify-content: center;
+    }
+
+    .arrow-button {
+        display: none;
+    }
+
+    .coach-photo .dots {
+        display: flex;
     }
 
     .yoga-item {
@@ -1510,17 +1601,17 @@ p {
         display: none;
     }
 
-    .yoga-item-image {
+    .yoga-item:first-child .yoga-item-image {
         display: block;
     }
 
     .details {
-        height: 100vh;
+        height: 80vh;
     }
 
    .sliders {
-    height: 80vh;
-   }
+        height: 50vh;
+    }
 
     .slider {
         width: 83%;
@@ -1590,14 +1681,14 @@ p {
     }
 
     .headline::before {
-        right: 55%;
+        right: 40%;
         bottom: 0;
         background-size: contain;
     }
 
     .headline::after {
-        left: 41%;
-        top: 43%;
+        left: 40%;
+        top: 44%;
     }
 
     .yoga-image {
@@ -1649,7 +1740,7 @@ p {
     }
 
     .subscription {
-        margin: 100px 0
+        margin: 100px 0;
     }
 
     .footer .container {
@@ -1707,7 +1798,7 @@ p {
         display: block;
     }
 
-    .yoga-item:not(:first-child) h2 {
+    .yoga-item:not(:first-child) h3 {
         font-size: 20px;
     }
 
@@ -1761,10 +1852,22 @@ p {
         margin-bottom: 35px;
     }
 
+    .coach-name {
+        font-size: 50px;
+    }
+
+    .coach-title .number {
+        font-size: 70px;
+    }
+
+    .coach-title .coach-count {
+        font-size: 35px;
+        max-width: 100px;
+    }
+
     .coach-img {
         display: block;
-         margin: 0 auto;
-        max-width: 80%;
+        margin: 0 auto;
     }
 
     .tab-head {
@@ -1818,7 +1921,7 @@ p {
     .sliders::after {
         content: "";
         position: absolute;
-        background: url(/assets/png/slider-second.png) no-repeat;
+        background: url(/assets/png/slider-second.png) no-repeat center right;
         background-size: contain;
         width: 50%;
         height: 80%;
@@ -1845,7 +1948,7 @@ p {
     }
 
     .call-to-action {
-         margin: 170px 0 0;
+        margin: 170px 0 0;
     }
 
     .call-to-action .container {
@@ -1886,9 +1989,13 @@ p {
 
 @media (max-width: 500px) {
     .headline::after {
-        left: 38%;
+        left: 26%;
         top: 60%;
         background-size: contain;
+    }
+
+    .coach-row {
+        grid-template-rows: auto auto 1fr;
     }
 
     .yoga-types {
@@ -1902,7 +2009,11 @@ p {
         background-size: 100%;
     }
 
-    .yoga-item h2 {
+    .yoga-item:first-child .yoga-item-image {
+        display: none;
+    }
+
+    .yoga-item h3 {
         padding: 35px;
         font-size: 20px;
         margin: 0;
@@ -1936,10 +2047,13 @@ p {
 
     .yoga-item-header {
         align-items: center;
+    }
+
+    .yoga-item-header:hover {
         margin-bottom: 18px;
     }
 
-    .yoga-item:hover h2 {
+    .yoga-item:hover h3 {
         font-size: 25px;
         padding: 0;
     }
@@ -1989,13 +2103,21 @@ p {
 }
 
 @media (max-width: 440px) {
+    .headline::after {
+        top: 65%;
+    }
+
+    .coach-name {
+        margin-bottom: 5%;
+    }
+
+    .coach-data p {
+        font-size: 16px;
+    }
+
     .tab-join {
         font-size: 18px;
         padding: 12px 40px;
-    }
-
-    .yoga-item:first-child {
-        padding: 30px;
     }
 
    .sliders {
@@ -2008,6 +2130,10 @@ p {
 
     .quote-image {
         width: 40px;
+    }
+
+    .subscription {
+        margin: 170px 0;
     }
 
     .subscription-name {
@@ -2065,8 +2191,8 @@ p {
     }
 
     .dot {
-        width: 10px;
-        height: 10px;
+        width: 12px;
+        height: 12px;
     }
 
     .cta-title {
