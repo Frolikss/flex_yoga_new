@@ -119,10 +119,6 @@ p {
     display: none;
 }
 
-.levels {
-    margin-top: 350px;
-}
-
 .level-title .container {
     margin: 0 auto;
     max-width: 1300px;
@@ -132,7 +128,7 @@ p {
 .title-row {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: baseline;
 }
 
 .title {
@@ -163,6 +159,7 @@ p {
 .level-tab {
     display: flex;
     justify-content: space-between;
+    position: relative;
     background: #E6BE80;
     font-family: 'Gilroy Bold', serif;
     font-size: 22px;
@@ -171,12 +168,26 @@ p {
     transition: flex 1s;
 }
 
+.level-tab:hover::before {
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    left: 0;
+    bottom: 0;
+    color: inherit;
+    box-shadow: inset -100px 0 37px -7px;
+    background: url(/assets/svg/bg-chains.svg);
+}
+
 .level-tab:first-child {
     background: #5FA494;
+    color: #5FA494;
 }
 
 .level-tab:last-child {
     background: #F08365;
+    color: #F08365;
 }
 
 .level-tab:hover {
@@ -456,12 +467,11 @@ p {
     font-family: Phenomena, sans-serif;
     display: block;
     border-collapse: collapse;
-    background-color: #F2F2F2;
-    padding: 0 15px 10px;
 }
 
 .schedule-table th, td, tr {
     padding: 15px;
+    background-color: #F2F2F2;
     border-bottom: 2px solid #BDBDBD;
 }
 
@@ -619,6 +629,18 @@ p {
 
 .slider-third {
     opacity: .5;
+}
+
+.dot {
+    width: 15px;
+    height: 15px;
+    background-color: #D1D4DB;
+    border-radius: 50%;
+    margin-left: 5px;
+}
+
+.dot:first-child {
+    background-color: #182949;
 }
 
 .reviews {
@@ -1212,6 +1234,35 @@ p {
         bottom: 0%;
     }
 
+    .sliders {
+        padding: 0;
+        justify-content: center;
+    }
+
+    .slider:not(:first-child) {
+        display: none;
+    }
+
+    .slider {
+        margin: 0;
+        flex-shrink: 1;
+        width: 67%;
+    }
+
+    .slider-photo-1 {
+        max-width: 100%;
+    }
+
+    .slider-info { 
+        display: none;
+    }
+
+    .slider-dots {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
     .subscription-col:first-child .subscription-item {
         transform-origin: left bottom;
     }   
@@ -1250,7 +1301,7 @@ p {
     }
 
     .levels {
-        margin: 150px 0 170px;
+        margin: 0 0 170px;
     }
 
     .types {
@@ -1444,6 +1495,28 @@ p {
         display: block;
     }
 
+    .details {
+        height: 100vh;
+    }
+
+   .sliders {
+    height: 80vh;
+   }
+
+    .slider {
+        width: 83%;
+    }
+
+    .slider-photo-1 {
+        object-fit: cover;
+        border-radius: 25px;
+        max-width: 100%;
+    }
+
+    .reviews {
+        margin-top: 170px;
+    }
+
     .cta-title {
         font-size: 60px;
         max-width: 100%;
@@ -1504,8 +1577,8 @@ p {
     }
 
     .headline::after {
-        left: 14%;
-        top: 58%;
+        left: 41%;
+        top: 43%;
     }
 
     .yoga-image {
@@ -1514,11 +1587,6 @@ p {
 
     .headline-text {
         display: flex;
-        
-    }
-
-    .footer .container {
-        padding: 30px;
     }
 
     .reviews-title {
@@ -1526,12 +1594,29 @@ p {
     }
 
     .reviews-sliders {
-        padding-top: 25px;
-        padding-bottom: 25px;
+        padding: 25px 16px;
     }
 
     .review-progress {
         justify-content: center;
+    }
+
+    .review-slider {
+        margin-right: 0;
+        width: 100%;
+        margin-bottom: 50px;
+    }
+
+    .review-slider-inner {
+        margin-right: 0;
+    }
+
+    .review-slider:not(:first-child) {
+        display: none;
+    }
+
+    .review-text {
+        width: 100%;
     }
 
     .review-progress-bar, .review-progres-arrows {
@@ -1544,20 +1629,12 @@ p {
         margin-top: 20px;
     }
 
-    .dot {
-        width: 15px;
-        height: 15px;
-        background-color: #D1D4DB;
-        border-radius: 50%;
-        margin-left: 5px;
-    }
-
-    .dot:first-child {
-        background-color: #182949;
-    }
-
     .subscription {
         margin: 100px 0
+    }
+
+    .footer .container {
+        padding: 30px;
     }
 
     .footer-logo {
@@ -1628,6 +1705,7 @@ p {
         display: flex;
         flex-direction: row;
         align-items: center;
+        margin-bottom: 2%;
     }
 
     .subscription-item {
@@ -1661,6 +1739,7 @@ p {
 @media (max-width: 680px) {
     .title {
         font-size: 30px;
+        margin-bottom: 35px;
     }
 
     .coach-img {
@@ -1674,9 +1753,22 @@ p {
         line-height: 24px;
     }
 
+    .types {
+        margin: 170px 0;
+    }
+
     .schedule-title {
         justify-content: space-between;
+        align-items: baseline;
         margin: 0;
+    }
+
+    .schedule .container {
+        margin-bottom: 170px;
+    }
+
+    .yoga-types {
+        margin-top: 0;
     }
 
     .yoga-links {
@@ -1690,6 +1782,51 @@ p {
 
     .yoga-item {
         flex: 0 1 45%;
+    }
+
+    .details-title {
+        margin-bottom: 35px;
+    }
+
+    .sliders {
+        position: relative;
+    }
+
+    .sliders::after {
+        content: "";
+        position: absolute;
+        background: url(/assets/png/slider-second.png) no-repeat;
+        background-size: contain;
+        width: 50%;
+        height: 80%;
+        transform: scaleX(-1);
+        left: 46%;
+        top: 10%;
+        z-index: -1;
+    }
+
+    .reviews-title {
+        margin-bottom: 15px;
+    }
+
+    .schedule-title {
+        padding: 0;
+    }
+
+    .subscription-col:first-child {
+        margin-top: 0;
+    }
+
+    .faq-title {
+        margin-bottom: 0;
+    }
+
+    .call-to-action {
+         margin: 170px 0 0;
+    }
+
+    .call-to-action .container {
+        margin-bottom: 100px;
     }
 
     .call-to-action::before {
@@ -1718,12 +1855,17 @@ p {
     .cta-text {
         max-width: 90%;
     }
+
+    .footer {
+        margin-top: 0;
+    }
 }
 
 @media (max-width: 500px) {
     .headline::after {
-        left: 0;
-        top: 58%;
+        left: 38%;
+        top: 60%;
+        background-size: contain;
     }
 
     .yoga-types {
@@ -1733,26 +1875,64 @@ p {
 
     .yoga-item {
         flex: 0 1 100%;
+        margin-bottom: 4%;
         background-size: 100%;
     }
 
-    .yoga-item:first-child h2 {
+    .yoga-item h2 {
+        padding: 35px;
         font-size: 20px;
+        margin: 0;
     }
 
     .yoga-item p {
+        display: none;
         font-size: 18px;
         line-height: 21px;
     }
 
-    .review-slider-inner {
-        justify-content: flex-start;
-        flex-direction: column;
-        padding: 25px;
+    .yoga-item:first-child {
+        padding: 0;
+        background: url(/assets/png/type-first.png) no-repeat;
+        background-size: cover;
     }
 
-    .quote-image {
-        width: 30px;
+    .yoga-item .yoga-item-image {
+        display: none;
+    }
+
+    .yoga-item:hover {
+        padding: 35px;
+        background: none;
+        background-color: #E6BE80;
+    }
+
+    .yoga-item:hover .yoga-item-image {
+        display: block;
+    }
+
+    .yoga-item-header {
+        align-items: center;
+        margin-bottom: 18px;
+    }
+
+    .yoga-item:hover h2 {
+        font-size: 25px;
+        padding: 0;
+    }
+
+    .yoga-item:hover p {
+        display: block;
+    }
+
+    .sliders::after {
+        top: 15%;
+    }
+
+    .review-slider-inner {
+        justify-content: space-evenly;
+        flex-direction: column;
+        padding: 25px;
     }
 
     .review-text {
@@ -1794,6 +1974,22 @@ p {
         padding: 30px;
     }
 
+   .sliders {
+        height: 60vh;
+   }
+
+   .sliders::after {
+        top: 11%;
+    }
+
+    .quote-image {
+        width: 40px;
+    }
+
+    .subscription-name {
+        font-size: 16px;
+    }
+
     .faq-item:hover .faq-onclick {
         padding: 20px;
     }
@@ -1812,6 +2008,10 @@ p {
 }
 
 @media (max-width: 320px) {
+    .headline::after {
+        top: 70%;
+    }
+
     .logo-image {
         max-width: 70%;
     }
@@ -1834,6 +2034,15 @@ p {
 
     .yoga-link {
         margin-bottom: 16px;
+    }
+
+    .sliders::after {
+        top: 18%;
+    }
+
+    .dot {
+        width: 10px;
+        height: 10px;
     }
 
     .cta-title {
