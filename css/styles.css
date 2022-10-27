@@ -1989,6 +1989,11 @@ p {
         font-size: 20px;
     }
 
+    .tab-join {
+        font-size: 18px;
+        padding: 12px 40px;
+    }
+
     .yoga-item:first-child {
         padding: 30px;
     }
