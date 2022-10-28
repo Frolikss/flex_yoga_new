@@ -100,11 +100,11 @@ p {
 .headline::before, .headline::after {
     content: "";
     position: absolute;
-    background-size: contain;
 }
 
 .headline::before {
     background: url(/assets/png/bg-leaf-left.png) no-repeat;
+    background-size: contain;
     width: 100%; 
     height: 100%;
     right: 19%;
@@ -113,10 +113,10 @@ p {
 
 .headline::after {
     background: url(/assets/png/bg-leaf-right.png) no-repeat;
+    background-size: contain;
     width: 100%;
     height: 100%;
-    left: 81%;
-    bottom: 12%;
+    left: 70%;
 }
 
 .leafs-mobile {
@@ -210,6 +210,10 @@ p {
     align-items: flex-start;
     justify-content: space-around;
     flex: 0 1 50%;
+    overflow: visible;
+    opacity: 1;
+    height: auto;
+    width: auto;
 }
 
 .level-tab:hover .tab-head {
@@ -231,6 +235,7 @@ p {
     justify-content: space-between;
     flex-direction: column;
     align-items: center;
+    transition: margin .5s;
 }
 
 .tab-head {
@@ -239,7 +244,11 @@ p {
 }
 
 .tab-info {
-    display: none;
+    transition: 2s opacity;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    overflow: hidden;
     z-index: 1;
 }
 
@@ -472,12 +481,12 @@ p {
 .schedule .container {
     margin: 0 auto 350px;
     max-width: 1300px;
-    padding: 0 16px;
 }
 
 .schedule-title {
     display: flex;
     padding-bottom: 50px;
+    padding: 0 16px;
 }
 
 .schedule-info-image {
@@ -486,6 +495,7 @@ p {
 
 .schedule-wrapper {
     overflow-x: auto;
+    padding-left: 16px;
 }
 
 .schedule-table {
@@ -517,12 +527,14 @@ p {
 }
 
 .schedule-wrapper::-webkit-scrollbar {
-    height: 10px;
-    margin: 10px;
+    border-top: 10px solid #fff;
+    height: 20px;
     background-color: #E8EAED;
 }
 
 .schedule-wrapper::-webkit-scrollbar-thumb {
+    border-top: 10px solid #fff;
+    height: 10px;
     background-color: #5FA494;
 }
 
@@ -768,25 +780,26 @@ p {
 
 .play-image {
     position: absolute;
-    left: 40%;
+    left: 45%;
     top: 40%;
     z-index: 1;
 }
 
-.reviewer {
+.reviewer, .review-slider-back-text {
     font-family: 'Gilroy Semibold', serif;
     font-size: 25px;
     line-height: 150%;
-    z-index: 2;
 }
 
 .review-slider:hover .review-slider-inner {
     transform: rotateY(180deg);
 }
 
-.review-slider:hover .reviewer {
+.review-slider-back-text {
     color: #fff;
-    transform: rotateY(180deg);
+    position: absolute;
+    bottom: 6%;
+    left: 25%;
 }
 
 .review-progress {
@@ -797,7 +810,6 @@ p {
     max-width: 1300px;
     padding: 0 15px;
 }
-
 
 .review-progress-bar {
     height: 10px;
@@ -961,7 +973,7 @@ p {
     color: #5FA494;
     padding: 35px 0; 
     border-bottom: 2px solid #B9B9B9;
-   
+   transition: all 1s;
 }
 
 .faq-quest {
@@ -975,7 +987,10 @@ p {
 }
 
 .faq-onclick {
-    display: none;
+    transition: opacity 2s ease-out;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
 }
 
 .faq-form {
@@ -1005,6 +1020,10 @@ p {
     border: none;
     border-radius: 100px;
     margin-bottom: 3%;
+}
+
+.name:focus, .question:focus {
+    outline-color: #5FA494;
 }
 
 .send {
@@ -1047,13 +1066,15 @@ p {
     cursor: pointer;
 }
 
-.faq-item:hover .faq-onclick{
+.faq-item:hover .faq-onclick {
     display: flex;
     justify-content: space-around;
     align-items: center;
     color: #000;
     font-size: 20px;
     padding: 35px;
+    opacity: 1;
+    height: auto;
 }
 
 .faq-item:hover .plus-image {
@@ -1263,41 +1284,20 @@ p {
 .logo-mini-image {
     width: 70px;
 }
-
-@media (max-width: 1920px) {
-    .headline::before {
-        right: 25%;
-    }
-
-    .headline::after {
-        left: 76%;
-        bottom: 0%;
-    }
-}
   
 @media (max-width: 1700px) {
-    .headline::before {
-        right: 29%;
-    }
-
-    .headline::after {
-        left: 72%;
-        bottom: 0%;
-    }
-
     .yoga-image {
-        width: 40%;
+        width: 60%;
     }
 }
 
 @media (max-width: 1500px) {
     .headline::before {
-        right: 33%;
+        right: 24%;
     }
 
     .headline::after {
-        left: 68%;
-        bottom: 0%;
+        left: 65%;
     }
 
     .sliders {
@@ -1361,15 +1361,6 @@ p {
         font-size: 18px;
     }
 
-    .headline::before {
-        right: 40%;
-    }
-
-    .headline::after {
-        left: 65%;
-        bottom: 0%;
-    }
-
     .levels {
         margin: 0 0 170px;
     }
@@ -1420,7 +1411,7 @@ p {
 
 @media (max-width: 1200px) {
     .headline::before {
-        right: 48%;
+        right: 33%;
     }
 
     .headline::after {
@@ -1447,12 +1438,12 @@ p {
     }
 
     .headline::before {
-        right: 55%;
+        right: 40%;
     }
 
     .headline::after {
         left: 56%;
-        bottom: 0%;
+        bottom: -44%;
     }
 
     .level-info {
@@ -1465,6 +1456,7 @@ p {
     .level-tab {
         flex-direction: column;
         padding: 25px;
+        transition: flex 0.5s;
     }
 
     .level-tab:hover::before {
@@ -1585,7 +1577,12 @@ p {
 
 @media (max-width: 940px) {
     .headline::before {
-        right: 65%;
+        top: -6%;
+        right: 45%;
+    }
+
+    .headline::after {
+        top: 45%;
     }
 
     .yoga-item-header {
@@ -1681,14 +1678,15 @@ p {
     }
 
     .headline::before {
-        right: 40%;
+        right: 49%;
+        top: -7%;
         bottom: 0;
         background-size: contain;
     }
 
     .headline::after {
         left: 40%;
-        top: 44%;
+        top: 52%;
     }
 
     .yoga-image {
@@ -1727,6 +1725,10 @@ p {
 
     .review-text {
         width: 100%;
+    }
+
+    .review-slider-back-text {
+        left: 18%;
     }
 
     .review-progress-bar, .review-progres-arrows {
@@ -1784,10 +1786,15 @@ p {
     }
 }
 
+@media (max-width: 760px) {
+    .headline::after {
+        top: 55%;
+    }
+}
+
 @media (max-width: 740px) {
-    .bg-leaf-right-mobile {
-        margin-right: 0;
-        margin-left: auto;
+    .headline::after {
+        top: 57%;
     }
 
     .title-info {
@@ -1850,6 +1857,10 @@ p {
     .title {
         font-size: 30px;
         margin-bottom: 35px;
+    }
+
+    .headline::after {
+        top: 60%;
     }
 
     .coach-name {
@@ -1935,10 +1946,6 @@ p {
         margin-bottom: 15px;
     }
 
-    .schedule-title {
-        padding: 0;
-    }
-
     .subscription-col:first-child {
         margin-top: 0;
     }
@@ -1987,13 +1994,20 @@ p {
     }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 630px) {
     .headline::after {
-        left: 26%;
-        top: 60%;
-        background-size: contain;
+        top: 63%;
     }
+}
 
+@media (max-width: 580px) {
+    .headline::after {
+        top: 49%;
+        left: 32%;
+    }
+}
+
+@media (max-width: 500px) {
     .coach-row {
         grid-template-rows: auto auto 1fr;
     }
@@ -2007,6 +2021,7 @@ p {
         flex: 0 1 100%;
         margin-bottom: 4%;
         background-size: 100%;
+        transition: padding .5s;
     }
 
     .yoga-item:first-child .yoga-item-image {
@@ -2019,10 +2034,17 @@ p {
         margin: 0;
     }
 
+    .yoga-item:not(:first-child) p {
+        display: block;
+    }
+
     .yoga-item p {
-        display: none;
+        overflow: hidden;
+        height: 0;
+        opacity: 0;
         font-size: 18px;
         line-height: 21px;
+        transition: 1s opacity;
     }
 
     .yoga-item:first-child {
@@ -2049,17 +2071,18 @@ p {
         align-items: center;
     }
 
-    .yoga-item-header:hover {
-        margin-bottom: 18px;
-    }
-
     .yoga-item:hover h3 {
         font-size: 25px;
         padding: 0;
     }
 
+    .yoga-item:hover .yoga-item-header {
+        margin-bottom: 18px;
+    }
+
     .yoga-item:hover p {
-        display: block;
+        height: auto;
+        opacity: 1;
     }
 
     .sliders::after {
@@ -2093,7 +2116,7 @@ p {
     }
     
     .logo-mini-image {
-        width: 35px;
+        width: 50px;
     }
 
     .call-to-action::after {
@@ -2104,7 +2127,7 @@ p {
 
 @media (max-width: 440px) {
     .headline::after {
-        top: 65%;
+        top: 60%;
     }
 
     .coach-name {
